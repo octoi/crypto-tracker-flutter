@@ -35,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 SearchBar(onChange: (e) {}),
+                SizedBox(height: 30.0),
                 CoinList(coins: _coins),
               ],
             ),
