@@ -1,6 +1,7 @@
 import 'package:crypto/utils/api.dart';
 import 'package:crypto/utils/const.dart';
-import 'package:crypto/widgets/SearchBar.dart';
+import 'package:crypto/widgets/coin_list.dart';
+import 'package:crypto/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -9,12 +10,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var _coins;
+  var _coins = [];
 
   void getCoins() async {
     var _coinData = await getAllCoins();
     setState(() => _coins = _coinData);
-    print(_coins);
   }
 
   @override
@@ -35,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
                 SearchBar(onChange: (e) {}),
+                CoinList(coins: _coins),
               ],
             ),
           ),
