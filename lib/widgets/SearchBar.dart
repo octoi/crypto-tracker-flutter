@@ -23,6 +23,9 @@ class SearchBar extends StatelessWidget {
         ),
       ),
       style: TextStyle(color: appWhite),
+      onChanged: (String text) {
+        onChange(text);
+      },
     );
   }
 }
