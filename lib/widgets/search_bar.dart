@@ -9,23 +9,30 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(
-        fillColor: appSecondaryColor,
-        filled: true,
-        border: InputBorder.none,
-        hintText: 'search',
-        hintStyle: TextStyle(color: appWhite, fontSize: 18.0),
-        prefixIcon: Icon(
-          CupertinoIcons.search,
-          color: appWhite,
-          size: 20.0,
-        ),
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 5.0),
+      decoration: BoxDecoration(
+        color: appSecondaryColor,
+        borderRadius: BorderRadius.circular(10.0),
       ),
-      style: TextStyle(color: appWhite),
-      onChanged: (String text) {
-        onChange(text);
-      },
+      child: TextField(
+        decoration: InputDecoration(
+          fillColor: appSecondaryColor,
+          filled: true,
+          border: InputBorder.none,
+          hintText: 'search',
+          hintStyle: TextStyle(color: appWhite, fontSize: 18.0),
+          prefixIcon: Icon(
+            CupertinoIcons.search,
+            color: appWhite,
+            size: 20.0,
+          ),
+        ),
+        style: TextStyle(color: appWhite),
+        onChanged: (String text) {
+          onChange(text);
+        },
+      ),
     );
   }
 }

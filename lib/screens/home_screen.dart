@@ -11,10 +11,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   var _coins = [];
+  var _filteredCoins = [];
 
   void getCoins() async {
     var _coinData = await getAllCoins();
-    setState(() => _coins = _coinData);
+    setState(() {
+      _coins = _coinData;
+      _filteredCoins = _coinData;
+    });
   }
 
   @override
@@ -34,9 +38,18 @@ class _HomeScreenState extends State<HomeScreen> {
             padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
-                SearchBar(onChange: (e) {}),
+                SearchBar(onChange: (String search) {
+                  search = search.toLowerCase();
+                  setState(() {
+                    _filteredCoins = _coins
+                        .where((coin) =>
+                            coin['name'].toLowerCase().contains(search))
+                        .toList();
+                    print(_filteredCoins);
+                  });
+                }),
                 SizedBox(height: 30.0),
-                CoinList(coins: _coins),
+                CoinList(coins: _filteredCoins),
               ],
             ),
           ),

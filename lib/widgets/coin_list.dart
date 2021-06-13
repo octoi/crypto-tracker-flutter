@@ -10,12 +10,7 @@ class CoinList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: coins.map((coin) {
-        return Coin(
-          name: coin['name'],
-          price: coin['current_price'],
-          image: coin['image'],
-          priceChange: coin['price_change_percentage_24h'],
-        );
+        return Coin(coin: coin);
       }).toList(),
     );
   }

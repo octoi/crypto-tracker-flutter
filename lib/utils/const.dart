@@ -10,4 +10,3 @@ const Color appWhite = Color(0xFFE2E2E2);
 // api urls
 const apiUrl =
     'https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false';
-const apiCoinUrl = 'https://api.coingecko.com/api/v3/coins/';
