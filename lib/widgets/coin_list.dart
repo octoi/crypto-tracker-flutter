@@ -12,7 +12,7 @@ class CoinList extends StatelessWidget {
       children: coins.map((coin) {
         return Coin(
           name: coin['name'],
-          price: coin['price'],
+          price: coin['current_price'],
           image: coin['image'],
           priceChange: coin['price_change_percentage_24h'],
         );
