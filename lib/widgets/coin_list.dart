@@ -11,10 +11,10 @@ class CoinList extends StatelessWidget {
     return Column(
       children: coins.map((coin) {
         return Coin(
-          name: coin?.name,
-          price: coin?.price,
-          image: coin?.image,
-          priceChange: coin?.price_change_percentage_24h,
+          name: coin['name'],
+          price: coin['price'],
+          image: coin['image'],
+          priceChange: coin['price_change_percentage_24h'],
         );
       }).toList(),
     );
